@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Angel Spa | Massage & Relaxation in Evansville, IN</title>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -129,7 +130,7 @@
       width: 100%;
     }
 
-    .nav-cta {
+    .nav-booking {
       padding: 10px 18px;
       border-radius: 999px;
       color: #fff;
@@ -137,7 +138,7 @@
       box-shadow: 0 10px 28px rgba(128, 88, 77, 0.3);
     }
 
-    .nav-cta::after {
+    .nav-booking::after {
       display: none;
     }
 
@@ -299,22 +300,42 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     }
 
-    .btn-primary {
-      color: var(--rose-dark);
-      background: #fff;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.24);
-    }
-
     .btn-ghost {
       color: #fff;
       background: rgba(255, 255, 255, 0.16);
       border: 1px solid rgba(255, 255, 255, 0.38);
       backdrop-filter: blur(12px);
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    #Anywhere_button_iframe {
+      min-height: 52px !important;
+      padding: 0 28px !important;
+      border-radius: 999px !important;
+      background-color: #fff !important;
+      color: var(--rose-dark) !important;
+      border: none !important;
+      font-size: 15px !important;
+      font-weight: 800 !important;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18) !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    #Anywhere_button_iframe:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.24) !important;
+    }
+
+    .booking-note {
+      display: inline-flex;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.92rem;
+      font-weight: 600;
     }
 
     .scroll-note {
@@ -591,6 +612,19 @@
       max-width: 650px;
     }
 
+    .gift-call {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--rose-dark);
+      font-weight: 800;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+    }
+
     .testimonials {
       background: var(--cream-2);
       padding-bottom: 90px;
@@ -817,7 +851,7 @@
 
     @media (max-width: 900px) {
       .navbar {
-        align-items: flex-start;
+        align-items: center;
         border-radius: 26px;
       }
 
@@ -865,6 +899,15 @@
       .map-card iframe {
         min-height: 380px;
       }
+
+      .hero-actions {
+        align-items: stretch;
+      }
+
+      #Anywhere_button_iframe,
+      .btn-ghost {
+        width: 100%;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -896,7 +939,7 @@
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQs</a>
       <a href="#contact">Contact</a>
-      <a href="#contact" class="nav-cta">Book Now</a>
+      <a href="#home" class="nav-booking">Book Online</a>
     </div>
   </nav>
 
@@ -914,9 +957,13 @@
         Step into Angel Spa for a quiet, soothing escape designed to ease tension,
         restore balance, and help you feel renewed from head to toe.
       </p>
+
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Book Now →</a>
+        <script id="anywhere_book_now_script" type="text/javascript" src="https://assets.setmore.com/integration/book-now/live/v1/anywhere-book-now.js"></script>
+        <button style="background-color: #000; color: #fff; border: none; padding: 12px 18px; font-size: 14px; font-weight: 600; border-radius: 6px; cursor: pointer;" id="Anywhere_button_iframe" class="anywhere-book-now-button" data-booking-url="https://angelspa8zkc.setmore.com" data-new-tab="false">Book now</button>
+
         <a href="#services" class="btn btn-ghost">View Services</a>
+        <span class="booking-note">Online booking powered by Setmore</span>
       </div>
     </div>
 
@@ -1096,7 +1143,7 @@
             for birthdays, holidays, thank-you gifts, and anyone who deserves time to relax.
           </p>
         </div>
-        <a href="#contact" class="btn btn-primary">Call to Ask</a>
+        <a href="tel:8122639680" class="gift-call">Call to Ask</a>
       </div>
     </div>
   </section>
@@ -1208,11 +1255,11 @@
       <div class="section-header reveal">
         <div>
           <div class="section-kicker">Contact & Location</div>
-          <h2>Book your quiet escape.</h2>
+          <h2>Visit Angel Spa.</h2>
         </div>
         <p>
-          Call Angel Spa to schedule your massage, ask about gift cards, or learn
-          more about available appointment times.
+          Use the online booking button above to schedule through Setmore, or call
+          Angel Spa to ask about gift cards and available appointment times.
         </p>
       </div>
 
@@ -1234,6 +1281,11 @@
             <div class="info-item">
               <small>Address</small>
               <p>121 S Green River Rd.<br />Evansville, IN 47715</p>
+            </div>
+
+            <div class="info-item">
+              <small>Online Booking</small>
+              <p>Click the Book now button at the top of the page to schedule online.</p>
             </div>
 
             <div class="info-item">
